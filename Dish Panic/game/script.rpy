@@ -28,14 +28,16 @@ label start:
     "Al menos mañana llega mi día libre, es el último esfuerzo de la semana"
     "Pero eso significa que quizás... Pueda descansar un poco más..."
     stop music
-    "{color=#c70ea8}¡Hermanito! Despierta ya, es muy tarde.{/color}"
+    "{color=#05f8af}¡Hermanito! Despierta ya, es muy tarde.{/color}"
     "¿Qué?"
 
     scene bg otaku_room
     with dissolve
     show nino serious at center 
 
-    "Hermano ya se paso la hora, no sonó el despertador, tengo que ir a la escuela y tu al trabajo"
+    "{color=#05f8af}Hermano ya se paso la hora, no sonó el despertador, tengo que ir a la escuela y tu al trabajo{/color}"
+    play music "Radiohead.ogg"
+    "Hola Nino... No me digas... Maldito celular... ¿Qué hora es? No puedo faltar al trabajo"
 
 
 
