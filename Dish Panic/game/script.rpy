@@ -216,8 +216,124 @@ label start:
 
     "{color=#e8f800ff}Miren quién se digno a llegar, ni un mensaje, carta, señal de humo... Nada para avisarnos que no venías ¿Tu te manejas cómo quieres?{/color}"
     "{color=#e8f800ff}Este es un trabajo serio, necesito responsabilidad o te vas{/color}"
+    "Lo siento mucho Maruo, lo que paso es que..."
+
+    menu:
+        "¿Qué excusa puedo decirle?"
+        "No encontré mi medicamento":
+            "{i}El sabe que necesito mi medicación, lo entenderá{i}"
+            jump medicamento_scene
+        "Tuve que acompañar a mi hermana a la escuela":
+            "{i}Yo le avisé que me hacía cargo de mi hermana, lo debe entender{i}"    
+            jump verdad_scene
+        "Me quedé dormido":
+            "{i}Quizás la sinceridad sea lo mejor...{i}"
+            jump verdad_scene
+
+    label medicamento_scene:
+
+        "{color=#e8f800ff}Bueno... La salud es importante{/color}"  
+        "{color=#e8f800ff}Al menos dime que lo encontraste{/color}"   
+        "Bueno, la verdad es que... no..."
+
+        hide maruo serious
+        show maruo happy at center
+
+        "{color=#e8f800ff}Jajajaja... Ay qué voy a hacer contigo y tus excusas... Ponte a trabajar y luego lo resolvemos{/color}"
+
+        hide maruo happy
+        jump escena_comun2
+
+    label verdad_scene:
+
+        "{color=#e8f800ff}Es una irresponsabilidad hacía el trabajo, deberías apreciar esta oportunidad que te doy de trabajar en este restaurante, no tirarla a la basura{/color}"
+        "{color=#e8f800ff}Vamos, ponte a trabajar y luego lo resolvemos{/color}"
+        "Si, perdón, no volverá a suceder"
+
+        hide maruo serious
+        jump escena_comun2
+
+    label escena_comun2:
+
+        "{i}Bueno, eso podría haber salido peor, guardaré mis cosas a comenzar con el trabajo{i}"
+        "{color=#9c7359ff}¡Por fin llegaste! Ayudame, no doy abasto{/color}"
+
+        scene bg itsuki cg2
+        with dissolve
+        play music "Groovy Saturday.ogg" fadein 1.0
+
+        "¡Itsuki! Disculpa que llegue tarde y te deje toda la apertura a ti, no volverá a pasar amiga"
+        "{color=#9c7359ff}¿Está todo bien? Es la primera vez que te demoras tanto tiempo en llegar, normalmente incluso eres más puntual que yo{/color}"
+        "{i}Conozco a Itsuki hace solo unos meses, pero se preocupa mucho, es buena persona{i}"
+        "Si, está todo bien, solo que el despertador no sonó y tuve que llevar a mi hermana a la escuela, fue una mañana complicada"
+
+        scene bg itsuki cg4
+
+        "{color=#9c7359ff}Sé que te esfuerzas mucho por tu hermana. Además ya conoces al señor Maruo, a él lo único que le interesa es el restaurante{/color}"
+        "{color=#9c7359ff}Nos va bien y tenemos una clientela fiel, y aun así él es súper estricto.{/color}"
+        "Aun así… Creo que me empezaré a despertarme una hora antes, solo por precaución, no puedo perder el trabajo"
+
+        scene bg itsuki cg3
+
+        "{color=#9c7359ff}Jajaja No dejes que te afecte{/color}"
+        "{color=#9c7359ff}Antes el señor Maruo era más amable, cuando ella todavía estaba aquí…{/color}"
+        "¿Ella?"
+
+        scene bg itsuki cg1
+
+        "{color=#9c7359ff}Olvidalo, no es importante...{/color}"
+        "{color=#9c7359ff}Debemos seguir trabajando o se enojará nuevamente{/color}"
+
+        menu:
+            "¿De qué está hablando?"
+            "Ahora quiero saber, insistir":
+                "Itsuki ahora ya hablaste, cuéntame rápido de qué estabas hablando"
+                jump confesion_scene
+            "Dejar pasar":
+                "Es cierto, si no comienzo a trabajar Maruo me dejará en la calle, vamos a eso"
+                jump escena_comun3
+
+    label confesion_scene:
+        scene bg interior7
+        show itsuki maid serious at center
+        stop music fadeout 25.5
+
+        "{color=#9c7359ff}Cuando empecé a trabajar aquí hace un tiempo, había una chica que trabajaba antes de que me contrataran{/color}"
+        "{color=#9c7359ff}No recuerdo su nombre, pero sí recuerdo que el señor Maruo era muy amable con ella. Él la consentía mucho, supongo que estaba enamorado de ella{/color}"
+        "{color=#9c7359ff}Solo estuve una semana hasta que dejo de trabajar aquí{/color}"
+        "{color=#9c7359ff}Me acuerdo que era muy linda, y muy gentil con todos. Muchos clientes solían venir en su horario de trabajo, porque querían ser atendidos por ella{/color}"
+
+        hide itsuki maid serious
+        show itsuki maid2 disgusted at center
+
+        "{color=#9c7359ff}Un día ella dejó de venir al trabajo, cuando le preguntamos al señor Maruo sobre ella, solo nos dijo que estaba enferma, y que no vendría por un tiempo{/color}"
+        "{color=#9c7359ff}A partir de ese día, el empezó a actuar cada vez más cortante con los demás empleados, y con los clientes que venían por la chica{/color}"
+        "{color=#9c7359ff}Pero en fin... Son cosas que pasan ¿no?"
+
+        hide itsuki maid2 disgusted
+        show itsuki maid happy
+
+        "{color=#9c7359ff}En fin, trabajemos antes que Maruo se de cuenta que estamos solo charlando{/color}"
+        "{i}¿Quién será esa chica? Qué extraño{i}"
+        jump escena_comun3
+
+        label escena_comun3:
+            scene bg interior7
+            show itsuki maid happy2 at center
+            play music "Catwalk.ogg" fadein 1.0
+
+            "{color=#9c7359ff}¡A trabajar!{/color}"
+            "{color=#9c7359ff}Vamos amigo, empieza por limpiar todos los utensilios que me quedaron, yo atenderé, tenemos muchos comensales hoy{/color}"
+
+            hide itsuki maid happy2
+
+            "{i}Y así comienza una nueva jornada laboral{i}"
 
 
+
+
+        
+      
 
 
     return
