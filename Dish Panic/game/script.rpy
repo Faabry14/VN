@@ -300,7 +300,7 @@ label start:
 
         "{color=#9c7359ff}Cuando empecé a trabajar aquí hace un tiempo, había una chica que trabajaba antes de que me contrataran{/color}"
         "{color=#9c7359ff}No recuerdo su nombre, pero sí recuerdo que el señor Maruo era muy amable con ella. Él la consentía mucho, supongo que estaba enamorado de ella{/color}"
-        "{color=#9c7359ff}Solo estuve una semana hasta que dejo de trabajar aquí{/color}"
+        "{color=#9c7359ff}Solo estuve con ella unas pocas semanas, hasta que dejo de venir al trabajo{/color}"
         "{color=#9c7359ff}Me acuerdo que era muy linda, y muy gentil con todos. Muchos clientes solían venir en su horario de trabajo, porque querían ser atendidos por ella{/color}"
 
         hide itsuki maid serious
@@ -319,6 +319,7 @@ label start:
 
         label escena_comun3:
             scene bg interior7
+            with dissolve
             show itsuki maid happy2 at center
             play music "Catwalk.ogg" fadein 1.0
 
@@ -328,6 +329,78 @@ label start:
             hide itsuki maid happy2
 
             "{i}Y así comienza una nueva jornada laboral{i}"
+
+            scene bg black
+            with dissolve
+
+            "{i}El día transcurrió tranquilamente, Maruo dejo de molestarme con mi llegada tarde{i}"
+            "{i}Pero algo me dice que no lo dejará pasar tan fácilmente{i}"
+            "{i}Finalmente llegó la hora de retirarme, Maruo ya no se encuentra en el restaurante y junto a Itsuki terminamos de limpiar y ordenar todo{i}"
+
+            scene bg bar3
+            with dissolve
+            show itsuki maid2 smile2 at center
+
+            "{color=#9c7359ff}Buen trabajo, nuestro turno ya está por terminar y llegan nuestros reemplazos{/color}"
+            "{color=#9c7359ff}¿No tienes que ir a buscar a tu hermana a la escuela?{/color}"
+            "Si, es cierto Itsuki, ya me voy, no quiero hacerla esperar mucho"
+
+            hide itsuki maid2 smile2
+            show itsuki maid2 smile at center
+
+            "{color=#9c7359ff}Qué hermano responsable{/color}"
+            "{color=#9c7359ff}Descansa, nos vemos mañana{/color}"
+            "Hasta mañana Itsuki, cuidado al volver"
+
+            hide itsuki maid2 smile
+
+            "{i}Ahora si, paso a buscar a Nino y luego a descansar, fue un día agotador{i}"
+
+            scene bg nightstreet
+            with dissolve
+            play music "callen.mp3" volume 0.6 fadein 0.7
+
+            "{i}Ya no estoy muy lejos de la escuela de Nino, igual sabe que llego con un poco de demora, está esperando con la profesora{i}"
+            "{i}Esa profesora realmente se preocupa por ella por suerte, tendremos que hacerle un regalo algún día{i}"
+            "{i}Esa que veo desde lejos, es...{i}"
+            "{i}¿Tsubame?{i}"
+
+            show tsubame neutral2 at center
+
+            "{color=#41beddff}Ho... Hola... Qué sorpresa encontrarte por aquí{/color}"
+
+            play music "Lost in the Dessert.ogg" fadein 1.0
+
+            "{i}Ella es Tsubame, vive cerca de nuestra casa, la conocía desde antes de mudarnos. Pero desde que regresamos nos hicimos demasiados cercanos. Demasiado cercanos…{i}"
+            "{i}Tsubame me ha ayudado con Nino, y con la casa, creo que gracias a ella nos pudimos acomodar{i}"
+            "{i}Es un milagro haberla conocido{i}"
+
+            menu:
+                "¿Cómo debería saludarla?"
+                "Hola Tsubame ¿Qué haces por aquí sola?":
+                    "Tsubame ¿Qué haces caminando por aquí? Ya está anocheciendo"
+                    jump tsubame_scene1
+                "¡Qué suerte que nos encontramos!":
+                    "Tsubame, qué suerte que nos encontramos ¿Cómo estás?"
+                    jump tsubame_scene2
+
+    label tsubame_scene1:
+        show tsubame happy at center
+        "{color=#41beddff}Solo estaba de paso por aquí, haciendo unas compras, ¿tu cómo estás?{/color}"
+        "Siempre viendo el lado buenos a las adversidades"
+
+        hide tsubame happy
+        show tsubame smile at center
+
+        "{color=#41beddff}Como siempre tan metaforico{/color}"
+        "{color=#41beddff}¿Y cómo está Nino?{/color}"
+    
+
+
+    label tsubame_scene2:
+        
+
+
 
 
 
