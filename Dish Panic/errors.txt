@@ -2,13 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 155: end of line expected.
-    scene bg res11blur with fastblur 10
-                                     ^
+File "game/screens.rpy", line 1628: end of line expected.
+    style name_input.xalign = 0.5
+                    ^
 
-File "game/script.rpy", line 157: end of line expected.
-    show yuki_polaroid at center fit 1000 750
-                                 ^
+File "game/screens.rpy", line 1629: end of line expected.
+    style name_input.yalign = 0.5
+                    ^
+
+File "game/screens.rpy", line 1630: end of line expected.
+    style name_input.width = 400
+                    ^
+
+File "game/screens.rpy", line 1631: end of line expected.
+    style name_input.height = 100
+                    ^
 
 Ren'Py Version: Ren'Py 8.1.3.23091805
-Sat Nov  4 23:16:55 2023
+Sun Nov  5 01:38:47 2023

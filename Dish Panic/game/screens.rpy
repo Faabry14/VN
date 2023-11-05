@@ -1608,3 +1608,5 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+    

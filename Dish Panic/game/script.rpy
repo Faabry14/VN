@@ -15,6 +15,29 @@ image m normal = "maruo serious"
 image m happy = "maruo happy"
 image m smile = "maruo smile"
 
+define i = Character("Itsuki")
+image i normal = "itsuki serious"
+image i smile = "itsuki smile"
+image i smile2 = "itsuki smile2"
+image i disgusted = "itsuki disgusted"
+image i disgusted2 = "itsuki disgusted2"
+
+define t = Character("Tsubame")
+image t normal = "tsubame neutral"
+image t normal2 = "tsubame neutral2"
+image t serious = "tsubame serious"
+image t serious2 = "tsubame serious2"
+image t happy = "tsubame happy"
+image t smile = "tsubame smile"
+image t smile2 = "tsubame smile2"
+image t talking = "tsubame talking"
+
+define y = Character("Yuki")
+image y happy = "yuki happy"
+image y happy2 = "yuki happy2"
+image y serious = "yuki serious"
+image y serious2 = "yuki serious2"
+image y smile = "yuki smile"
 
 
 # El juego comienza aquí.
@@ -34,7 +57,7 @@ label start:
     "{i}Pero eso significa que quizás... Pueda descansar un poco más...{i}"
     stop music
     "{color=#05f8af}¡Hermanito! Despierta ya, es muy tarde.{/color}"
-    "{i}¿Qué?{i}"
+    "{i}{cps=4}¿Qué?{/cps}{i}{nw}"
 
     scene bg otaku_room
     with dissolve
@@ -171,14 +194,16 @@ label start:
     "{i}Vivimos un año allí hasta que nos llegó la noticia de que Yuki desapareció, por lo que quisimos volver a la ciudad y ayudar en su busqueda{i}"
     "{i}Pero claro, cada quién debe cumplir sus responsabilidades, y en el mientras tanto, yo debo trabajar para cuidar y pagar los estudios de Nino{i}"
     "{i}Una de las pocas cosas que me quedan de ella es esta foto{i}"
-    "{i}Lo último que recuerdo de Yuki es{i}"
+    "{i}Lo último que recuerdo de Yuki es...{i}"
 
     hide yuki_polaroid
     show yuki_polaroid2 at center
     stop music
     play sound "demon.mp3"
-    
-    "{i}Yu... Yu... ¿Yuki?{i}"
+    show veinmask at center
+    window hide(None)
+    window auto
+    pause 2.4
 
     hide yuki_polaroid2
     scene bg res11
