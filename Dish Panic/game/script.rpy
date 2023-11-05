@@ -82,7 +82,7 @@ label start:
         scene bg kiosk2
         with dissolve
         show nino vhappy at center
-        play music "Puzzles.ogg"
+        play music "Puzzles.ogg" fadein 1.0
 
         "Ya casi llegamos a tu escuela hermana ¿Cómo te sientes?"
         "{color=#05f8af}Muy bien, me encanta cuando paseamos juntos{/color}"
@@ -120,7 +120,7 @@ label start:
         scene bg train
         with dissolve
         show nino talking at center
-        play music "Puzzles.ogg"
+        play music "Puzzles.ogg" fadein 1.0
 
         "Ya estamos cerca de la parada de tu colegio Nino, preparate"
         hide nino talking
@@ -159,7 +159,7 @@ label start:
 
     scene bg res11blur
     with dissolve
-    play music "Warmth.ogg"
+    play music "Warmth.ogg" fadein 1.0
     show yuki_polaroid at center
 
     "{i}Yuki... Mi amiga de toda la vida{i}"
@@ -186,7 +186,7 @@ label start:
     "{i}Ya llegué al trabajo{i}"
 
     scene bg interior7
-    play music "Catwalk.ogg"
+    play music "Catwalk.ogg" fadein 1.0
     show maruo serious at center
 
     "{color=#e8f800ff}Miren quién se digno a llegar, ni un mensaje, carta, señal de humo... Nada para avisarnos que no venías ¿Tu te manejas cómo quieres?{/color}"
