@@ -2,6 +2,8 @@
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
+default eleccion = None
+
 define n = Character("Nino")
 image n normal = "nino serious"
 image n vhappy = "nino vhappy"
@@ -301,12 +303,17 @@ label start:
         "{color=#9c7359ff}Cuando empecé a trabajar aquí hace un tiempo, había una chica que trabajaba antes de que me contrataran{/color}"
         "{color=#9c7359ff}No recuerdo su nombre, pero sí recuerdo que el señor Maruo era muy amable con ella. Él la consentía mucho, supongo que estaba enamorado de ella{/color}"
         "{color=#9c7359ff}Solo estuve con ella unas pocas semanas, hasta que dejo de venir al trabajo{/color}"
-        "{color=#9c7359ff}Me acuerdo que era muy linda, y muy gentil con todos. Muchos clientes solían venir en su horario de trabajo, porque querían ser atendidos por ella{/color}"
 
+        scene bg interior7shadow
         hide itsuki maid serious
         show itsuki maid2 disgusted at center
 
+        "{color=#9c7359ff}Me acuerdo que era muy linda, y muy gentil con todos. Muchos clientes solían venir en su horario de trabajo, porque querían ser atendidos por ella{/color}"
         "{color=#9c7359ff}Un día ella dejó de venir al trabajo, cuando le preguntamos al señor Maruo sobre ella, solo nos dijo que estaba enferma, y que no vendría por un tiempo{/color}"
+
+        scene bg interior7
+        show itsuki maid2 disgusted at center
+
         "{color=#9c7359ff}A partir de ese día, el empezó a actuar cada vez más cortante con los demás empleados, y con los clientes que venían por la chica{/color}"
         "{color=#9c7359ff}Pero en fin... Son cosas que pasan ¿no?"
 
@@ -379,6 +386,7 @@ label start:
                 "¿Cómo debería saludarla?"
                 "Hola Tsubame ¿Qué haces por aquí sola?":
                     "Tsubame ¿Qué haces caminando por aquí? Ya está anocheciendo"
+                    $ eleccion = "no_declararse"
                     jump tsubame_scene1
                 "¡Qué suerte que nos encontramos!":
                     "Tsubame, qué suerte que nos encontramos ¿Cómo estás?"
@@ -394,19 +402,148 @@ label start:
 
         "{color=#41beddff}Como siempre tan metaforico{/color}"
         "{color=#41beddff}¿Y cómo está Nino?{/color}"
+        "Está bien, logró acostumbrarse al ritmo de la ciudad y al de su nueva escuela. Según ella, dice que sus compañeros son amables con ella, y la ayudan con lo que necesite"
+        "{color=#41beddff}Es genial, me alegro de que se haya podido adaptar a la ciudad, sé que debe ser complicado mudarse de una ciudad a otra{/color}"
+        "{i}Lo cierto es que estoy enamorado de Tsubame, pero no creo que sea el momento para declararme. Cuando sea el momento se lo diré, no quisiera que nuestra amistad se arruine ahora{i}"
+        jump escena_comun4
     
 
 
     label tsubame_scene2:
+        show tsubame happy at center
+        "{color=#41beddff}¡Hola!{/color}"
+
+        hide tsubame happy
+        show tsubame talking at center
+
+        "{color=#41beddff}A mi también me alegra verte pero ¿Por qué dices lo de la suerte?{/color}"
+        "{i}Lo cierto es que estoy enamorado de Tsubame, pero no creo que sea el momento para declararme. Cuando sea el momento se lo diré, no quisiera que nuestra amistad se arruine ahora{i}"
+        "Tsubame, hay algo de lo que quiero hablar. He estado pensando en nosotros últimamente, y siento que..."
+
+        hide tsubame talking
+        show tsubame neutral at center
+
+        menu:
+            "{i}¿Debería declararme?{i}"
+            "Lo que siento por ti es más que amistad. Estoy enamorado de ti.":
+                "{i}Al carajo, es repentino pero si no lo hago ahora jamás lo haré...{i}"
+                $ eleccion = "declararse"
+                jump tsubamesi_scene
+            "No es momento":
+                "{i}Es muy repentino, no quiero arruinar nuestra amistad ahora{i}"
+                $ eleccion = "no_declararse"
+                jump tsubameno_scene
+
+    label tsubamesi_scene:
+        "Tsubame, te amo, estoy enamorado de ti, realmente no tuve el mejor de los días, pero solo viéndote acercandote me cambio totalmente"
+
+        hide tsubame serious
+        show tsubame neutral2 at center
+
+        "Sé que es repentino, pero siento que si no lo digo ahora no lo diré nunca, esto es algo que vengo aguantando desde hace tiempo"
+        "{color=#41beddff}Vaya, esto es inesperado. No sé qué decir en este momento. Dame un minuto para procesarlo{/color}"
+
+        hide tsubame neutral2
+        show tsubame serious at center
+        window hide(None)
+        window auto
+        pause 2.0
+
+        hide tsubame serious
+        show tsubame smile2 at center
+        window hide(None)
+        window auto
+        pause 2.0
+
+        hide tsubame smile2
+        show tsubame happy at center
+
+        "{color=#41beddff}No sabia que tenias esos sentimientos por mi…Si te soy sincera, tu tambien me gustas{/color}"
+        "{color=#41beddff}Pensaba guardar estos sentimientos, ya que no quería que afectará a nuestra amistad{/color}"
+        "Entonces qué dices ¿Te gustaría salir conmigo?"
+        "{color=#41beddff}¡Si! Es muy repentino pero te amo... eso me da mucha vergüenza decirlo... Deberé acostumbrarme...{/color}"
+        "Realmente este paso de ser un día más al mejor de mi vida en un segundo... Tsubame... Yo..."
+        "{color=#41beddff}Dime, soy toda oidos{/color}"
+        jump escena_comun4
+
+    label tsubameno_scene:
+
+        "Quería decirte que realmente aprecio todo lo que has hecho por mi, eres una de las personas más importantes que conozco, sé que es algo repentino, pero gracias por todo"
         
+        hide tsubame neutral
+        show tsubame smile at center
 
+        "{color=#41beddff}Tu eres muy importante para mi también, quiero lo mejor para ti y tu hermana, no hace falta que me agradezcas{/color}"
+        "{i}Dios, este momento podría ser ideal para declararme, aún no es muy tarde{i}"
+        jump escena_comun4
 
+    label escena_comun4:
+        show tsubame happy at center
+        play sound "phone.mp3"
+        stop music
 
+        "{i}Es mi telefono, mi hermana dice que van a cerrar ya la escuela, debo apurarme{i}"
 
+        play music "callen.mp3" volume 0.6 fadein 0.7
 
+        "¡Oh rayos! Me olvidé que tengo que ir a buscar a Nino a su escuela"
+        hide tsubame happy
+        show tsubame talking at center
+        if eleccion == "declararse":
+            hide tsubame talking
+            show tsubame happy at center
+            "{color=#41beddff}Ve, yo me quedo alegre con estos minutos, realmente me cambiaste la noche{/color}"
+            "{color=#41beddff}Descansa, tengo un regalo guardado que pensaba darte en tu cumpleaños, pero ahora quiero que sea el primer regalo como tu novia, mañana te lo llevo{/color}"
+            "No puedo esperar a saber que es"
+            hide tsubame happy
+            show tsubame neutral at center
+        elif eleccion == "no_declararse":
+            "{color=#41beddff}¡Si! Se está haciendo tarde, ve a buscarla, luego terminamos de hablar{/color}"    
+        "Adiós Tsubame buenas noches. Iré a la escuela de Nino antes que se haga más tarde"
 
-        
-      
+        hide tsubame talking
+        show tsubame happy at center
+
+        "{color=#41beddff}Buenas noches{/color}"
+
+        hide tsubame happy
+
+        "{i}A correr{i}"
+
+        scene bg schoolnight
+        with dissolve
+        play music "Radiohead.ogg" fadein 1.0
+        show nino ghappy at center
+
+        "{color=#05f8af}¡Hermano!{/color}"
+        "Nino, disculpa la demora"
+        "{color=#05f8af}Descuida, unas amigas me estuvieron haciendo compañía hasta que tú llegaras{/color}"
+        "Lo siento, me tope con Tsubame cuando salí del trabajo y nos pusimos a hablar"
+
+        hide nino ghappy
+        show nino vhappy at center
+
+        "{color=#05f8af}Oh ya veo, ¿Qué tal está?{/color}"
+        "Ella está bien, te contaré más en el camino, vámonos a casa, es bastante tarde"
+        "{color=#05f8af}Si, vámonos, estoy cansada{/color}"
+
+        hide nino vhappy
+        scene bg otaku_room night
+        with dissolve
+        play music "Nostalgic.ogg" fadein 1.0 volume 0.6
+
+        "{i}Por fin en la cama{i}"
+        "{i}Sé que dormí hasta tarde, pero no dejo de ser un día agotador{i}"
+        "{i}Tuve que correr todo el día{i}"
+        if eleccion == "declararse":
+            "{i}Aún así fue un gran día{i}"
+            "{i}Aún no entra en mi cabeza que Tsubame y yo seamos... ¿Pareja?{i}"
+            "{i}Y mañana va a traer un regalo{i}"
+            "{i}Me muero de ansiedad por saber qué es{i}"
+        elif eleccion == "no_declararse":
+            "{i}Ver a Tsubame lo alegro un poco al menos, esa chica me vuelve loco{i}"
+        "{i}En fin, es hora de dormir{i}"
+        "{i}Buenas noches{i}"     
 
 
     return
