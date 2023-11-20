@@ -180,35 +180,8 @@ label start:
     "{i}Ya casi estoy{i}"
     "{i}Mis compañeros ya empezaron su turno puedo verlos desde aquí comenzando a atender a los comensales"
     "{i}Espero que el señor Maruo no este de malhumor, si no, este va a ser mi último día en este restaurante{i}"
-    "{i}Aunque aún no puedo quitarme de la cabeza...{i}"
-
-    scene bg res11blur
-    with dissolve
-    play music "Warmth.ogg" fadein 1.0
-    show yuki_polaroid at center
-
-    "{i}Yuki... Mi amiga de toda la vida{i}"
-    "{i}Yuki siempre se preocupo por mi y mi hermana, incluso ella fue quién se encargo de comprar la silla de ruedas de Nino tras la muerte de mi padre{i}"
-    "{i}Recuerdo como consiguió un trabajo de medio tiempo para hacerlo luego de que se rompió su primer silla de ruedas{i}"
-    "{i}Pero...{i}"
-    "{i}Ella desapareció hace un año, esa es la razón por la que mi hermana y yo nos mudamos aquí hace dos meses{i}"
-    "{i}Solíamos ir a la escuela juntos, tras terminarla yo me mudé junto a mi hermana a otra ciudad{i}"
-    "{i}Vivimos un año allí hasta que nos llegó la noticia de que Yuki desapareció, por lo que quisimos volver a la ciudad y ayudar en su busqueda{i}"
-    "{i}Pero claro, cada quién debe cumplir sus responsabilidades, y en el mientras tanto, yo debo trabajar para cuidar y pagar los estudios de Nino{i}"
-    "{i}Una de las pocas cosas que me quedan de ella es esta foto{i}"
-    "{i}Lo último que recuerdo de Yuki es...{i}"
-
-    hide yuki_polaroid
-    show yuki_polaroid2 at center
-    stop music
-    play sound "demon.mp3"
-    show veinmask at center
-    window hide(None)
-    window auto
-    pause 2.4
-
-    hide yuki_polaroid2
-    scene bg res11
+    play sound "footsteps1.mp3"
+    pause 3.0
 
     "{i}Ya llegué al trabajo{i}"
 
@@ -530,7 +503,7 @@ label start:
         hide nino vhappy
         scene bg otaku_room night
         with dissolve
-        play music "Nostalgic.ogg" fadein 1.0 volume 0.6
+        play music "Warmth.ogg" fadein 1.0 volume 0.7
 
         "{i}Por fin en la cama{i}"
         "{i}Sé que dormí hasta tarde, pero no dejo de ser un día agotador{i}"
@@ -542,8 +515,117 @@ label start:
             "{i}Me muero de ansiedad por saber qué es{i}"
         elif eleccion == "no_declararse":
             "{i}Ver a Tsubame lo alegro un poco al menos, esa chica me vuelve loco{i}"
-        "{i}En fin, es hora de dormir{i}"
-        "{i}Buenas noches{i}"     
+        "{i}Aún así lo que no puedo quitarme de la cabeza es, más ahora antes de dormir...{i}"
+
+    show yuki_polaroid at center
+
+    "{i}Yuki... Mi amiga de toda la vida{i}"
+    "{i}Yuki siempre se preocupo por mi y mi hermana, incluso ella fue quién se encargo de comprar la silla de ruedas de Nino tras la muerte de mi padre{i}"
+    "{i}Recuerdo como consiguió un trabajo de medio tiempo para hacerlo luego de que se rompió su primer silla de ruedas{i}"
+    "{i}Pero...{i}"
+    "{i}Ella desapareció hace un año, esa es la razón por la que mi hermana y yo nos mudamos aquí hace dos meses{i}"
+    "{i}Solíamos ir a la escuela juntos, tras terminarla yo me mudé junto a mi hermana a otra ciudad{i}"
+    "{i}Vivimos un año allí hasta que nos llegó la noticia de que Yuki desapareció, por lo que quisimos volver a la ciudad y ayudar en su busqueda{i}"
+    "{i}Pero claro, cada quién debe cumplir sus responsabilidades, y en el mientras tanto, yo debo trabajar para cuidar y pagar los estudios de Nino{i}"
+    "{i}Una de las pocas cosas que me quedan de ella es esta foto{i}"
+    "{i}Lo último que recuerdo de Yuki es...{i}"
+
+    hide yuki_polaroid
+    show yuki_polaroid2 at center
+    stop music
+    play sound "demon.mp3"
+    show veinmask at center
+    window hide(None)
+    window auto
+    pause 2.4
+
+    hide yuki_polaroid2 
+    hide veinmask 
+
+    "{i}¿Qué?{i}"
+
+    pause 3.0
+
+    "{i}En fin, es hora de dormir{i}"
+    "{i}Buenas noches{i}"     
+
+    scene bg black
+    with dissolve
+    pause 2.0
+    window hide(None)
+    play sound "alarma.mp3"
+    pause 2.8
+
+    scene bg otaku_room
+    with dissolve
+    play music "Puzzles.ogg"
+
+    "{i}Bueno se ve que hoy si funcionó la alarma{i}"
+    "{i}Otro día llegando tarde, el señor Maruo no me lo iba a perdonar{i}"
+    "{i}Es demasiado estricto a veces, y complicado de entender, pero creo que en el fondo lo hace porque se preocupa por nosotros y no solo por el restaurante como a veces pensamos{i}"
+    "{i}Bueno, a prepararnos que empieza el día{i}"
+
+    play sound "Zipper.ogg"
+    pause 1.0
+
+    if eleccion == "declararse":
+            "{color=#05f8af}¡Hermano Tsubame está aqui!{/color}"
+            "{i}Cierto, Tsubame dijo que iba a venir a traerme un regalo hoy{i}"
+            "{i}Estoy tan ansioso por saber qué es y por verla...{i}"
+            "¡Nino hazla pasar!"
+            "{i}¡Qué nervios!{i}"
+
+            show tsubame happy at center
+
+            "Hola Tsubame buenos días ¿Cómo estás?"
+            "{color=#41beddff}Hola... amor...{/color}"
+            "{i}Tsubame me dijo amor, creo que voy a morir{i}"
+            "{color=#41beddff}Cómo te prometí, te... traje tu regalo, quiero que sepas que es muy valioso para mi, al igual que tu...{/color}"
+
+            hide tsubame happy
+            hide bg otaku_room
+            show bg tsubame cg
+            with dissolve
+            play music "Lost in the Dessert.ogg" fadein 1.0
+
+            "{color=#41beddff}Quería traerte mi diario personal, sé que parece raro, sé que no es lo que esperabas, pero realmente te...{/color}"
+            "{color=#41beddff}Te...{/color}"
+            "{color=#41beddff}Te amo... así que quiero ir en serio contigo, si vamos a estar juntos quiero mostrarte quién soy realmente y no soy la mejor a veces con las palabras cara a cara pero si escritas{/color}"
+            "{color=#41beddff}Así que aquí tienes mi ser, quién soy, quiero que lo leas y me conozcas por quién soy{/color}"
+            "{i}Wow realmente no me esperaba esto, Tsubame es tan linda...{i}"
+            "No sé qué decirte, me parece un regalo hermoso y estoy muy feliz que me des esta confianza ¿Estás segura que quieres darme tu diario así?"
+            "{color=#41beddff}Si, todo lo que está ahí son mis pensamientos, gustos y quién soy, quiero que lo tengas, quizás incluso pueda ayudarte algún día, quién sabe{/color}"
+            "Gracias... Mi amor..."
+
+            show bg otaku_room
+            with dissolve
+            play music "Puzzles.ogg" fadein 1.5
+            show tsubame happy:
+                xalign 0.30
+                yalign 1.0
+            show nino talking:
+                xalign 0.75
+                yalign 1.0
 
 
-    return
+            "{color=#05f8af}Oigan no me gusta interrumpirlos y no quiero, pero hermanito, ya se está haciendo tarde, tenemos que ir a la escuela y al trabajo{/color}"
+            "Cierto, Tsubame, ven con nosotros, vives cerca de la escuela de Nino, puedo acompañarte"
+            "{color=#41beddff}Me encantaría, vamos{/color}"
+
+            hide tsubame happy
+            hide nino talking
+
+    elif eleccion == "no_declararse":
+            "{i}¡A trabajar!{i}"
+            
+
+    show bg res11
+    with dissolve
+    play music "Catwalk.ogg" fadein 1.0
+
+    show maruo serious at center
+
+    "¡Hola señor Maruo! Ya estoy listo para comenzar a trabajar"
+
+
+return
