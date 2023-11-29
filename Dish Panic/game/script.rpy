@@ -626,6 +626,109 @@ label start:
     show maruo serious at center
 
     "¡Hola señor Maruo! Ya estoy listo para comenzar a trabajar"
+    "{color=#e8f800ff}Hola ¿Qué tal?{/color}"
+    "{color=#e8f800ff}Para compensar tu llegada tarde de ayer necesito que hoy te quedes más tiempo, necesito que luego del cierre te quedes lavando los platos y terminando de acomodar todo, no abrimos hasta el lunes y va a haber un gran evento ese día{/color}"
+    "{color=#e8f800ff}Por lo que necesito todo impecable, llama ya a tu hermana y avisale que no puedes ir a buscarla, volverás tarde{/color}"
+    "{color=#e8f800ff}Y antes que preguntes, es más que una hora que es lo que tardaste ayer, así que si, será pago el tiempo extra{/color}"
+    "{i}Realmente no tenía planes de trasnochar en el restaurante... Pero no queda de otra{i}"
+    "Ok Maruo, lo haré"
+    "{i}¡Con ganas! A comenzar{i}"
+
+    scene bg black
+    with dissolve
+    hide maruo serious
+
+    "{i}Y así pasaron las horas hasta que llegó el cierre{i}"
+    "{i}Itsuki se quedo ayudandome un rato hasta que su familia comenzó a llamarla y debió irse{i}"
+    "{i}Finalmente aquí estoy solo{i}"
+    "{i}Maruo a veces puede ser demasiado estricto con sus empleados, si no hubiera mencionado que se pagaba extra ya me hubiera ido{i}"
+    "{i}Y si no tuviera que cuidar a mi hermana y pagar mis pastillas...{i}"
+    "{i}Que por cierto, hace dos días no tomo ahora que lo pienso...{i}"
+
+    stop music
+    play sound "am-radio-tuning.mp3"
+    pause 6.0
+    window hide(None)
+    play music "To You Radio.mp3" fadein 0.4
+    show bg bar3
+    with dissolve
+
+
+    "{i}¿Qué demonios es eso?{i}"
+    "{i}¿Cómo esa radio se encendió sola?{i}"
+    "{i}Y esa canción, me resulta tan familiar{i}"
+
+    play sound "Chair.ogg"
+
+    "{i}¿Algo se movió?{i}"
+    "¿¡Qui... Quién anda ahí!?"
+
+    window hide(None)
+    pause 1.5
+
+    "{i}Silencio absoluto...{i}"
+    "{i}Quizás deba ir a revisar la cocina{i}"
+    "{i}Recuerdo que Maruo tiene una vieja radio ahí{i}"
+
+    "{i}Además... Un cuchillo para defenderme no vendría mal si es necesario{i}"
+
+    play sound "Footsteps.ogg"
+
+    "{i}Cada paso cuesta, estoy casi paralizado{i}"
+
+    play sound "Footsteps.ogg"
+
+    "{i}¿No sería mejor correr?{i}"
+
+    play sound "Footsteps.ogg"
+
+    "{i}No, debo enfrentar a quién sea que este ahí{i}"
+
+    play sound "Footsteps.ogg"
+
+    "{i}Y ahora yo...{i}"
+
+    stop music
+    play sound "radio.mp3"
+    pause 3.0
+    window hide(None)
+    stop sound
+    
+
+    "{i}¿Qué?{i}"
+
+    play sound "latido_corazon_rapido.mp3" loop volume 0.5
+
+    "{i}Alguien ha apagado la radio y veo una sombra desde la puerta{i}"
+    "{i}Estoy indefenso{i}"
+    "{i}Este será mi final{i}"
+
+    stop sound
+
+    show yuki serious2 at center
+    window hide(None)
+    pause 1.5
+
+    "{cps=4}Yu... Yu... Yuki...{/cps}{nw}"
+    "{color=#d38bbdff}{cps=4}Hola...{/cps}{/color}{nw}"
+
+    hide yuki serious2
+    show bg black
+    with dissolve
+
+    "Esta ha sido la demo del juego"
+    "¡Muchas gracias por haber jugado!"
+    "Esperamos que les haya gustado y poder, pronto, tenerlos con nosotros jugando el primer capítulo completo"
+    "¡Gracias!"
+    
+    
+    
+
+
+
+
+    
+
 
 
 return
